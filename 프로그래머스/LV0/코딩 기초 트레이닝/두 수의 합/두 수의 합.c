@@ -46,7 +46,7 @@ char* solution(const char* a, const char* b) {
         answer[ansIdx--] = n + '0';
     }
 
-    if (remain == -1 && carry == 1)
+    if (carry == 1)
         answer[0] = '1';
     else
         answer++;
