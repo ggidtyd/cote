@@ -14,7 +14,7 @@ int count(char* str, char c) {
 }
 
 int compare(const char* p1, const char* p2) {
-    return *p1 - *p2; // 오름차순
+    return *p1 - *p2;
 }
 
 // 파라미터로 주어지는 문자열은 const로 주어집니다. 변경하려면 문자열을 복사해서 사용하세요.

@@ -5,19 +5,18 @@ def solution(s, n):
 
     for i in range(ord("a"), ord("z")+1):
         lower += chr(i)
-        upper += chr(i-32)
+        upper += chr(i - 32)
+    
+    lower += lower
+    upper += upper
     
     for c in s:
-        if c.isalpha() and c.islower():
-            new_idx = lower.find(c) + n
-            if new_idx >= 26:
-                new_idx -= 26
-            answer += lower[new_idx]
-        elif c.isalpha() and c.isupper():
-            new_idx = upper.find(c) + n
-            if new_idx >= 26:
-                new_idx -= 26    
-            answer += upper[new_idx]
-        else:
+        if c == ' ':
             answer += c
+        else:
+            if c.islower():
+                answer += lower[lower.find(c) + n]
+            else:
+                answer += upper[upper.find(c) + n]
+                
     return answer

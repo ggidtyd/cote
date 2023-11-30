@@ -27,7 +27,7 @@ def col_first(beginning, target, flips_c):
 
 
 def solution(beginning, target):
-    R, C= len(beginning), len(beginning[0])
+    R, C = len(beginning), len(beginning[0])
     cmp = ones(shape=(R, C), dtype=int8)
     beginning = beginning == cmp
     target = target == cmp
