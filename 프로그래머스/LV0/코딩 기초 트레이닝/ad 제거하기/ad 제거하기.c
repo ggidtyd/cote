@@ -14,6 +14,6 @@ char** solution(const char* strArr[], size_t strArrLen) {
         if (strstr(strArr[i], "ad") == NULL)
             answer[ansIdx++] = strArr[i];
 
-    realloc(answer, sizeof(char*) * ansIdx);
+    answer = (char**)realloc(answer, sizeof(char*) * ansIdx);
     return answer;
 }
