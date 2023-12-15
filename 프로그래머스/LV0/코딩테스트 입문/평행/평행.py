@@ -1,24 +1,11 @@
-from itertools import combinations
-
-
-def get_a(p1, p2):
-    x1, y1 = p1
-    x2, y2 = p2
-    return (y2 - y1) / (x2 - x1)
-
-
 def solution(dots):
-    answer = 0
-    pick2 = combinations([0, 1, 2, 3], 2)
     
-    for i1, i2 in pick2:
-        i3, i4 = {0, 1, 2, 3} - {i1, i2}
-        
-        l1_a = get_a(dots[i1], dots[i2])
-        l2_a = get_a(dots[i3], dots[i4])
-        
-        if l1_a == l2_a:
-            answer = 1
-            break
-        
-    return answer
+    for i in range(len(dots)):
+        for j in range(i+1, len(dots)):
+            o1, o2 = {0, 1, 2, 3} - {i, j}
+            a1 = (dots[i][1] - dots[j][1]) / (dots[i][0] - dots[j][0])
+            a2 = (dots[o1][1] - dots[o2][1]) / (dots[o1][0] - dots[o2][0])
+
+            if a1 == a2:
+                return 1
+    return 0
